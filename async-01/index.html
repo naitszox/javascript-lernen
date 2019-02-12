@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Async ist geil</title>
+        <script>
+            console.log('Hello World');
+        </script>
+    </head>
+    <body>
+        <script>
+            // textContent gibt den text inhalt eines elements zurück!
+            var myElement = document.querySelector('.test').textContent;
+            console.log(myElement);
+
+            window.addEventListener('load', function(){
+                console.log('NEULAND. ist geil!');
+            });
+        </script>
+
+        <span class="test"></span>
+
+        <script>
+            console.log('My test');
+        </script>
+
+    </body>
+</html>
