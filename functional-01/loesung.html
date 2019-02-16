@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+        <script>
+
+            // Ziel ist es aus Funktion eine Addition verschiedener Zahlen zu bewerkstellen
+            // der einfachheithalber sollen nur 1 bis 5 addierbar sein
+            // bsp: one(three(four())) -> => 8
+            // tipp: Es ist viel einfacher als man annehmen will
+
+            function handleNumber(fixed, number) {
+                return (number
+                    ? fixed + number
+                    : fixed
+                );
+            }
+
+            function one(number) {
+                return handleNumber(1, number);
+            }
+
+            function two(number) {
+                return handleNumber(2, number);
+            }
+
+            function three(number) {
+                return handleNumber(3, number);
+            }
+
+            function four(number) {
+                return handleNumber(4, number);
+            }
+
+            function five(number) {
+                return handleNumber(5, number);
+            }
+
+            console.log(one(two(three(four()))));
+
+        </script>
+
+    </body>
+</html>
