@@ -7,11 +7,27 @@
     <body>
 
         <script>
-
             // Ziel ist es aus Funktion eine Addition verschiedener Zahlen zu bewerkstellen
             // der einfachheithalber sollen nur 1 bis 5 addierbar sein
             // bsp: one(three(four())) -> => 8
             // tipp: Es ist viel einfacher als man annehmen will
+
+            const handleNumber = (n, param) => param ? param + n  : n;
+
+            const one = (n) => handleNumber(1, n);
+
+            const two = (n) => handleNumber(2, n);
+
+            const three = (n) => handleNumber(3, n);
+
+            const four = (n) => handleNumber(4, n);
+
+            const five = (n) => handleNumber(5, n);
+
+            const sum = three(one(five()));
+            console.log(sum);
+
+
         </script>
     </body>
 </html>

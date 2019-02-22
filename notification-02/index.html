@@ -10,17 +10,46 @@
         <button data-type="error" data-message="Ich bin eine Kartoffel">Klick me</button>
         <button data-type="warnung" data-message="Werte sind falsch">Klick me</button>
 
-        // Wir möchten OBJEKTORIENTIERT dynamische Notifications erstellen
-        // Heißt wir erstellen einen Prototype einer Notification
-        // name darf selber gewählt werden
-        // jede notification hat 2 eigenschaften (message / type)
-        // bei type warning wird die notification gelb gefärbt
-        // bei type error rot
-        // die notification sollen sich nach dem rendern selber aus dem DOM entfernen (4 Sekunden)
-        // es müssen folgende Methoden erstellt werden
-        // rendern - erstellen des templates und hinzufügen zum dom
-        //           die methode rendern soll schon während eine Notification erstellt wird aufgerufen werden
-        // destroy - löscht die componente aus dem DOM
+        <script>
+
+          class Notification {
+
+            constructor(message, type) {
+              this.message = message;
+              this.type = type;
+              this.element = null;
+              this.render();
+            }
+
+            render(){
+              this.element = document.createElement('div');
+
+              this.element.addEventListener('click', () => {
+                this.destroy();
+              });
+
+              if (this.type === 'warnung') {
+                this.element.style.backgroundColor = 'yellow';
+              } else {
+                this.element.style.backgroundColor = 'red';
+              }
+
+              this.element.appendChild(document.createTextNode(this.message));
+
+              document.body.appendChild(this.element);
+            }
+
+            destroy() {
+              this.element.parentElement.removeChild(this.element);
+            }
+
+          }
+
+          const test = new Notification('Test', 'warnung');
+
+
+
+        </script>
 
     </body>
 </html>

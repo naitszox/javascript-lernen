@@ -10,8 +10,12 @@
     <body>
         <script>
             // textContent gibt den text inhalt eines elements zurück!
-            var myElement = document.querySelector('.test').textContent;
-            console.log(myElement);
+            try {
+              var myElement = document.querySelector('.test').textContent;
+              console.log(myElement);
+            } catch(e) {
+              console.error(e);
+            }
 
             window.addEventListener('load', function(){
                 console.log('NEULAND. ist geil!');
