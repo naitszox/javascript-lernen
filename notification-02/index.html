@@ -12,13 +12,23 @@
 
         <script>
 
+          const state = {
+            notification: null
+          };
+
           class Notification {
 
             constructor(message, type) {
+              this.checkState();
               this.message = message;
               this.type = type;
               this.element = null;
               this.render();
+              state.notification = this;
+            }
+
+            checkState() {
+              
             }
 
             render(){
@@ -47,6 +57,17 @@
 
           const test = new Notification('Test', 'warnung');
 
+
+          const buttons = [].slice.call(document.querySelectorAll('button'));
+
+          buttons.forEach((but) => {
+            but.addEventListener('click', () => {
+              new Notification(
+                but.getAttribute('data-message'),
+                but.getAttribute('data-type')
+              )
+            });
+          });
 
 
         </script>
