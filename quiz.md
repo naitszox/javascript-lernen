@@ -22,7 +22,7 @@
 
 11. Schreibe ein script das folgendes macht: Eine konstante Nummer definieren?
 
-12. Warum sorgt folgender Code für einen Fehler?
+12. Warum sorgt folgender Code für einen Fehler (wir betrachten das ganze im Chrome!)?
 
 <script>
   const myVar;
