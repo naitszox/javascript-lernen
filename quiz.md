@@ -27,3 +27,11 @@
 <script>
   const myVar;
 </script>
+
+13. Schreibe eine Funktion, die genau 3 Argumente erwartet um daraus ein HTML Element zuu erstellen und dieses an einen bestimmten Ort zu render.
+
+  - 1. Argument: tagName 
+  - 2. CSS Klasse die dem element übergeben wird
+  - 3. Das element dem es hinzugefügt wird
+
+Achte darauf dass der Code gecovered ist!
